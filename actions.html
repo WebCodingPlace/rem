@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Real Estate Manager - Documentation</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="css/custom.css">
+		<link rel="stylesheet" href="css/style.css">
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<header id="header-container-box">
+			<div class="text-center">
+				<div class="header">
+					<div class="container" style="position:relative;">
+					<p style="position: absolute;top: 0;left: 15px;">A Project by <a href="https://webcodingplace.com/">
+						<img style="max-height: 30px;    vertical-align: bottom;" src="https://webcodingplace.com/wp-content/uploads/2015/02/logo-small.png" id="logo" />
+					</a>
+					</p>	
+					<img src="https://s3.envato.com/files/232122317/rem-icon.png" id="logo" />
+					<h2><a href="https://webcodingplace.com/real-estate-manager-wordpress-plugin/">Real Estate Manager</a> - WordPress Plugin - Documentation</h2>
+					</div>
+				</div>
+			</div>
+		</header>
+		<section id="block-documentation">
+			<div class="container">
+			<div class="row">
+				<div id="block-menu-content" class="col-xs-4">
+					<ul class="block-menu" data-spy="affix" data-offset-top="120" data-offset-bottom="30">
+						<li><a class="faq-button active" href="#list-properties"><i class="icon fa fa-list"></i> List Properties</a></li>
+						<li><a class="faq-button" href="#search-properties"><i class="icon fa fa-search"></i> 
+							Search Properties</a>
+						</li>
+						<li><a class="faq-button" href="#caruosel-slider"><i class="icon fa fa-arrows-h"></i> Carousel Slider</a></li>
+						<li><a class="faq-button" href="#properties-map"><i class="icon fa fa-map-marker"></i> Properties Map</a></li>
+						<li><a class="faq-button" href="#register-agent-form"><i class="icon fa fa-user-plus"></i> Register Agent Frontend</a></li>
+						<li><a class="faq-button" href="#login-agent"><i class="icon fa fa-sign-in"></i> Login Agent Frontend</a></li>
+						<li><a class="faq-button" href="#create-property"><i class="icon fa fa-file-text"></i> Create Property Frontend</a></li>
+						<li><a class="faq-button" href="#edit-property"><i class="icon fa fa-pencil-square-o"></i> Edit Property Frontend</a></li>
+						<li><a class="faq-button" href="#my-properties"><i class="icon fa fa-th-list"></i> My Properties Frontend</a></li>
+						<li><a class="faq-button" href="#list-agents"><i class="icon fa fa-users"></i> List Agents</a></li>
+						<li><a class="faq-button" href="#agent-profile-public"><i class="icon fa fa-user"></i> Agent Profile Public</a></li>
+						<li><a class="faq-button" href="#single-property"><i class="icon fa fa-file-text-o"></i> Single Property</a></li>
+						<li><a class="faq-button" href="#edit-profile"><i class="icon fa fa-pencil"></i> Edit Profile Frontend</a></li>
+					</ul>
+				</div>
+				<div class="col-xs-8 container-box">
+					<div class="box-doc">
+						Thank you for using Real Estate Manager. If you have any questions that are beyond the scope of this help file, 
+						please feel free to contact <i>support@webcodingplace.com</i><br /><strong>Thanks so much!</strong>
+						<hr>
+						<blockquote>
+							Before reading this documentation, you should have a basic knowledge about WordPress Shortcodes. If you're not sure about them, please read a quick tutorial <a class="btn btn-info btn-sm" target="_blank" href="https://webcodingplace.com/how-to-use-shortcodes-in-wordpress/">here</a>
+						</blockquote>
+					</div>
+					<div class="box-doc" id="list-properties">
+						<h1><i class="fa fa-list"></i> List Properties</h1>
+						<h2>Default Shortcode</h2>
+						<p>Following Shortcode displays 10 properties order by date in Ascending order and bottom pagination. It uses Style 1 and 1 property per row.</p>
+						<code>[rem_list_properties]</code>
+						<hr>
+
+						<h2>Top Bar to Sort and Change Layout</h2>
+						<p>You can enable top bar for property listings to sort properties or change layout right from frontend. Just set top_bar to enable</p>
+						<code>[rem_list_properties top_bar="enable"]</code>
+						<br><br>
+						<hr>
+
+						<h2>Order and Orderby Attributes</h2>
+						<p>Following Shortcode displays 9 recent properties in Grid view with Style 2.</p>
+						<code>[rem_list_properties order="DESC" posts="9" orderby="date" style="2" pagination="disable" class="col-sm-3"]</code>
+						<br><br>
+						<p>
+							You can use following values for order attribute
+						<ul>
+							<li><b>DESC</b> - Descending order of orderby attribute</li>
+							<li><b>ASC</b> - Ascending order of orderby attribute</li>
+						</ul>
+						</p>
+						<p>
+							You can use following values for orderby attribute
+						<ul>
+							<li><b>date</b> - Sort by Property published date</li>
+							<li><b>ID</b> - Sort by Property ID</li>
+							<li><b>author</b> - Sort by Property Agent</li>
+							<li><b>title</b> - Sort by Property Title</li>
+							<li><b>modified</b> - Sort by Property Modify Date</li>
+							<li><b>rand</b> - Random order</li>
+						</ul>
+						</p>
+						<hr>
+
+						<h2>Property Styles and Grid Layout</h2>
+						<p>You can use style attribute to modify styles and class attribute defines the number of columns in a row. Following shortcode will display 3 properties in a row in style 3</p>
+						<code>[rem_list_properties style="3" class="col-sm-4"]</code>
+						<br>
+						<br>
+						<p class="bg-info padding">
+							If you're using style 1 (which is list view), you have to set class attribute to col-sm-12. Otherwise it may break the layout. You can use styles from 1 to 7. If you want to add additional property listing styles, we have an extension with 20+ more styles.
+						</p>
+						<p>class attribute can have following values</p>
+						<ul>
+							<li><strong>col-sm-12</strong> - 1 Column</li>
+							<li><strong>col-sm-6</strong> - 2 Columns</li>
+							<li><strong>col-sm-4</strong> - 3 Columns</li>
+							<li><strong>col-sm-3</strong> - 4 Columns</li>
+							<li><strong>col-md-5th-1</strong> - 5 Columns</li>
+							<li><strong>col-sm-2</strong> - 6 Columns</li>
+						</ul>
+						<hr>
+						<h2>Masonry Style Listings (Justified Grid)</h2>
+						<p>By using masonry attribute and setting its value to enable will render listings in masonry grid.</p>
+						<code>[rem_list_properties style="3" class="col-sm-4" masonry="enable"]</code>
+						<hr>
+						<h2>Total Properties and Pagination</h2>
+						<p>By default, listing shortcode displays pagination in the bottom if there are more properties than the value specified in posts attribute. You can disable the pagination by setting pagination attribute to disable. Suppose you want to display only 3 latest properties with no pagination:</p>
+						<code>[rem_list_properties posts="3" order="DESC" orderby="date" pagination="disable"]</code>
+						<hr>
+
+						<h2>Tag Specific Properties</h2>
+						<p>You can use tags attribute to display properties that are tagged with specific tag. Following shortcode will dispaly all properties that are tagged with wood.</p>
+						<code>[rem_list_properties style="3" class="col-sm-4" tags="wood"]</code>
+						<br><br>
+						<p class="bg-info padding">
+							You can also use multiple tag names separated by commas. Example: tags="wood,carpet"
+						</p>
+						<hr>
+						
+						<h2>Display Properties of Specific Agent</h2>
+						<p>If you want to display properties of a specific agent use attribute author and set its value to agent's ID.</p>
+						<code>[rem_list_properties style="3" class="col-sm-4" author="1"]</code>
+						<hr>
+
+						<h2>Display Properties of Current Logged In Agent</h2>
+						<p>If you want to display properties of current logged in agent, set attribute author to <strong>current</strong>.</p>
+						<code>[rem_list_properties style="3" class="col-sm-4" author="current"]</code>
+						<hr>
+
+						<h2>Prefer Near Properties (Enables Location Tracking)</h2>
+						<p>You can prefer those properties to display first which are near to the visitor's current location. Use attribute nearest_porperties and set its value to enable.</p>
+						<code>[rem_list_properties style="3" class="col-sm-4" nearest_porperties="enable"]</code>
+						<br><br>
+						<p class="bg-info padding">
+							It enables geo location tracking and thus asks visitor to allow his location tracking. Your site must be ssl enabled for better results.
+						</p>
+						<hr>
+						<h2>Display "For Sale" Properties</h2>
+						<p>You can use meta attribute to filter properties based on any default field or custom field created by custom fields menu. Suppose you want to display only those properties which have Purpose set to Sell.</p>
+						<code>[rem_list_properties style="3" class="col-sm-4" meta="property_purpose|Sell"]</code>
+						<br><br>
+						<p class="bg-info padding">
+							Please note that meta attribute accepts field name and value separated by pipe "|" sign. Value and field name both are case sensitive.
+						</p>
+						<hr>
+						<h2>Display Rented Properties</h2>
+						<p>As mentioned above, you can simply use meta attribute, setting its value to property_purpose|Rent.</p>
+						<code>[rem_list_properties style="3" class="col-sm-4" meta="property_purpose|Rent"]</code>
+						<hr>
+						<h2>Type Specific Properties</h2>
+						<p>You can display a list of properties based on property type using property_type field name in meta attribute. Following shortcode will display all Houses</p>
+						<code>[rem_list_properties style="3" class="col-sm-4" meta="property_type|House"]</code>
+						<br><br>
+						<p>Similarly, following shortcode will display all Offices.</p>
+						<code>[rem_list_properties style="3" class="col-sm-4" meta="property_type|Office"]</code>
+						<br><br>
+						<p>and following will display all Retails.</p>
+						<code>[rem_list_properties style="3" class="col-sm-4" meta="property_type|Retail"]</code>
+						<hr>
+						
+						<h2>Filter by Multiple Meta</h2>
+						<p>You can also use multiple fields in meta attribute. Each field-value group separated by commas. In the following example, it will display all those properties having country set to Australia and city set to Sydney.</p>
+						<code>[rem_list_properties style="3" class="col-sm-4" meta="property_city|sydney,property_country|australia"]</code>
+						<br><br>
+						<p class="bg-info padding">
+							Again, all field names and values in meta attribute are case sensitive.
+						</p>
+						<hr>
+
+						<h2>More Advanced Filtering</h2>
+						<p>You can also list properties matching multiple values in same field. For Example lets say you want to list duplex and houses at the same time, you can provide multiple values separated by star (*) symbol.</p>
+						<code>[rem_list_properties style="3" class="col-sm-4" meta="property_type|house*duplex"]</code>
+						<br>
+						<hr>
+					</div>
+					<div class="box-doc" id="search-properties">
+						<h1><i class="fa fa-search"></i> Search Properties</h1>
+						<h2>Default Shortcode</h2>
+						<p>Following is default shortcode to render property search form.</p>
+						<code>[rem_search_property]</code>
+						<br><br>
+						<p>It will display following fields in 2 columns layout.</p>
+						<ul>
+							<li>Search Text</li>
+							<li>Address</li>
+							<li>Property Type</li>
+							<li>Property Country</li>
+							<li>Property Purpose</li>
+							<li>Price slider</li>
+						</ul>
+						<hr>
+						<h2>Custom Search Fields</h2>
+						<p>You can manage fields in search form using fields_to_show attribute. It accepts field names separated by commas. Following shortcode will display only Property Type and Purpose dropdowns in search form.</p>
+						<code>[rem_search_property fields_to_show="property_type,property_purpose"]</code>
+						<br><br>
+						<p>Default field names that you can use are.</p>
+						<ul>
+							<li>search</li>
+							<li>order</li>
+							<li>orderby</li>
+							<li>agent</li>
+							<li>property_area</li>
+							<li>property_address</li>
+							<li>property_state</li>
+							<li>property_zipcode</li>
+							<li>property_city</li>
+							<li>property_country</li>
+							<li>property_rooms</li>
+							<li>property_price</li>
+							<li>property_type</li>
+							<li>property_purpose</li>
+							<li>property_status</li>
+							<li>property_bedrooms</li>
+							<li>property_bathrooms</li>
+						</ul>
+						<p class="bg-info padding">
+							You can also use custom fields, by specifying their data names.
+						</p>
+						<hr>
+						<h2>Search Form Layout</h2>
+						<p>You can customize the columns in each row by using columns attribute. Following shortcode will display 3 fields in a row. Search Box, Property Type and Price Range Slider.</p>
+						<code>[rem_search_property fields_to_show="search,property_type,property_price" columns="4"]</code>
+						<br><br>
+						<p>You can provide following values for columns attribute.</p>
+						<ul>
+							<li><strong>12</strong> - 1 Column</li>
+							<li><strong>6</strong> - 2 Columns</li>
+							<li><strong>4</strong> - 3 Columns</li>
+							<li><strong>3</strong> - 4 Columns</li>
+						</ul>
+						<hr>
+						<h2>Customize Search Button Label</h2>
+						<p>Customize the label used for search button using search_btn_text attribute.</p>
+						<code>[rem_search_property fields_to_show="search,property_type,property_price" columns="4" search_btn_text="Find Your Home"]</code>
+						<hr>
+						<h2>Customize More Filters Button Label</h2>
+						<p>Customize the label used for More Filters button using filters_btn_text attribute.</p>
+						<code>[rem_search_property fields_to_show="property_type,property_price" filters_btn_text="Advanced Options"]</code>
+						<br><br>
+						<p class="bg-info padding">
+							You can also disable the More Filters option by setting filters_btn_text value to empty. Example: filters_btn_text=""
+						</p>
+						<hr>
+						<h2>Create a Reset Fields Button</h2>
+						<p>Create reset search fields button using reset_btn_text attribute and setting its value to button's label.</p>
+						<code>[rem_search_property fields_to_show="property_type,property_price" reset_btn_text="Reset"]</code>
+						<hr>
+						<h2>Display Properties before Searching</h2>
+						<p>If you want to display some listings with search form before searching and when user performs search, replace with the search results. You can do it by inserting list shortcode inside search shortcode. See following example</p>
+						<code>[rem_search_property][rem_list_properties][/rem_search_property]</code>
+						<hr>
+
+						<h2>Search in Specific Criteria</h2>
+						<p>Suppose you need a search form that searches only rented properties without giving visitor the option to change property purpose. For this, you can use fixed_fields attribute. Provide field name and value separated by pipe | sign. Following search form will display Property Type and Price Range to search, but will only search for those properties which are for rent.</p>
+						<code>[rem_search_property fields_to_show="property_type,property_price" fixed_fields="property_purpose|Rent"]</code>
+						<br><br>
+						<p class="bg-info padding">
+							You can use multiple values in fields_to_show attribute separated by commas. Same as meta attribute in List Properties shortcode.
+						</p>
+						<hr>
+						<h2>Custom Results Page (Disable AJAX)</h2>
+						<p>If you're using search form on homepage and don't want to display results under the form, you can open a separate page for results. Use results_page attribute and set its value to results page url. Consider we have a page for displaying results and its url is http://site.com/results</p>
+						<code>[rem_search_property results_page="http://site.com/results"]</code>
+						<br><br>
+						<p class="bg-info padding">
+							Please note that the results page must have shortcode <code>[rem_search_results]</code> where you want to display results.
+						</p>
+						<hr>
+						<h2>Change Results Place</h2>
+						<p>If you're using search form in widget then you may don't want to display results under the form via AJAX. You may want to display them inside content area but still want to display them using AJAX without page reload. You can do that by creating a div and giving it a unique id. Then you can use results_selector attribute to display results in that div. Consider we have a div and id="custom-results"</p>
+						<code>[rem_search_property results_selector="#custom-results"]</code>
+						<br><br>
+						<p class="bg-info padding">
+							You should have a little knowledge about HTML Selectors to use this option.
+						</p>
+						<hr>
+
+						<h2>Sort Search Results</h2>
+						<p>You can sort search results by custom order using order and orderby attributes.</p>
+						<code>[rem_search_property order="DESC" orderby="price"]</code>
+						<br><br>
+						<p>
+							You can use following values for order attribute
+						<ul>
+							<li><b>DESC</b> - Descending order of orderby attribute</li>
+							<li><b>ASC</b> - Ascending order of orderby attribute</li>
+						</ul>
+						</p>
+						<p>
+							You can use following values for orderby attribute
+						<ul>
+							<li><b>date</b> - Sort by Property published date</li>
+							<li><b>ID</b> - Sort by Property ID</li>
+							<li><b>author</b> - Sort by Property Agent</li>
+							<li><b>title</b> - Sort by Property Title</li>
+							<li><b>modified</b> - Sort by Property Modify Date</li>
+							<li><b>rand</b> - Random order</li>
+							<li><b>price</b> - Property Base Price</li>
+						</ul>
+						</p>
+						<hr>
+
+						<h2>Simple Search Field</h2>
+						<p>From version 10.4.1 you can use simple search feature to easily embed search from anywhere, using shortcode [rem_simple_search] make sure to provide url also for search results page using attribute results_page.</p>
+						<code>[rem_simple_search results_page="http//site.com/results-page/"]</code>
+						<br><br>
+						<p class="bg-info padding">
+							The results page must have shortcode [rem_search_results] to display results.
+						</p>
+						<p>You can use following attributes in [rem_simple_search] shortcode.</p>
+<table class="table table-bordered">
+	<tr>
+		<th>Attributes</th>
+		<th>Description</th>
+		<th>Default Value</th>
+	</tr>
+	<tr>
+		<td>placeholder</td>
+		<td>Placeholder text to display in search field</td>
+		<td>Type to Search...</td>
+	</tr>
+	<tr>
+		<td>width</td>
+		<td>Maximum width for search bar</td>
+		<td>450px</td>
+	</tr>
+	<tr>
+		<td>border_color</td>
+		<td>Text input border color</td>
+		<td>#E4E4E4</td>
+	</tr>
+	<tr>
+		<td>results_page</td>
+		<td>URL of results page</td>
+		<td>#</td>
+	</tr>
+	<tr>
+		<td>search_icon</td>
+		<td>Search Icon</td>
+		<td>Raw html for search icon</td>
+	</tr>
+</table>
+						<hr>						
+					</div>
+					<div class="box-doc" id="caruosel-slider">
+						<h1><i class="fa fa-arrows-h"></i> Carousel Slider</h1>
+						<h2>Default Shortcode</h2>
+						<p>Following Shortcode displays 10 properties order by date in Ascending order. It uses Style 1 and displays 1 property at a time.</p>
+						<code>[rem_carousel]</code>
+						<hr>
+
+						<h2>Manage Columns</h2>
+						<p>You can use slidestoshow attribute to manage slider columns. Use style attribute to change property styles.</p>
+						<code>[rem_carousel slidestoshow="3" style="3"]</code>
+						<hr>
+
+						<h2>Order and Orderby Attributes</h2>
+						<p>Following Shortcode displays 9 recent properties with Style 2, and 3 slides at a time.</p>
+						<code>[rem_carousel total_properties="9" order="DESC" orderby="date" style="2" slidestoshow="3"]</code>
+						<br><br>
+						<p>
+							You can use following values for order attribute
+						<ul>
+							<li><b>DESC</b> - Descending order of orderby attribute</li>
+							<li><b>ASC</b> - Ascending order of orderby attribute</li>
+						</ul>
+						</p>
+						<p>
+							You can use following values for orderby attribute
+						<ul>
+							<li><b>date</b> - Sort by Property published date</li>
+							<li><b>ID</b> - Sort by Property ID</li>
+							<li><b>author</b> - Sort by Property Agent</li>
+							<li><b>title</b> - Sort by Property Title</li>
+							<li><b>modified</b> - Sort by Property Modify Date</li>
+							<li><b>rand</b> - Random order</li>
+						</ul>
+						</p>
+						<hr>
+
+						<h2>Sliding Speed and Slides to Scroll</h2>
+						<p>You can use custom sliding speed using attribute speed and setting its value to a number (milli seconds). Following shortcode will take 1 second to slide</p>
+						<code>[rem_carousel total_properties="9" slidestoshow="3" style="3" speed="1000"]</code>
+						<br><br>
+						<p>You can also configure how many properties to scroll at a time using slidestoscroll. Following shortcode will slide 3 properties when sliding.</p>
+						<code>[rem_carousel total_properties="9" slidestoshow="3" style="3" slidestoscroll="3"]</code>
+						<hr>
+
+						<h2>Auto Play and Auto Play Speed</h2>
+						<p>Set attribute autoplay to enable and slider will play automatically. Configure auto play gap time using autoplayspeed attribute. Using following shortcode, slider will auto slide property after every 3 seconds</p>
+						<code>[rem_carousel autoplay="enable" autoplayspeed="3000"]</code>
+						<br><br>
+						<p class="bg-info padding">
+							speed and autoplayspeed must have a number value and it will be used as Milli Seconds. (1 Second = 1000 Milli Seconds)
+						</p>						
+						<hr>
+
+						<h2>Sliding Arrows and Slide Indicator Dots</h2>
+						<p>Arows and bottom dots can be enabled setting arrows and dots attributes to enable respectively.</p>
+						<code>[rem_carousel arrows="enable" dots="enable"]</code>
+						<hr>
+
+						<h2>Display ID Specific Properties</h2>
+						<p>If you want to display some specific properties using their IDs, you can use attribute ids and set its value to comma separated property ids.</p>
+						<code>[rem_carousel slidestoshow="2" style="3" ids="124,456,789"]</code>
+						<hr>
+
+						<h2>Display Properties of Specific Agent</h2>
+						<p>If you want to display properties of a specific agent use attribute author and set its value to agent's ID.</p>
+						<code>[rem_carousel slidestoshow="2" style="3" author="1"]</code>
+						<hr>
+
+						<h2>Tag Specific Properties</h2>
+						<p>You can use tags attribute to display properties that are tagged with specific tag. Following shortcode will dispaly all properties that are tagged with wood.</p>
+						<code>[rem_carousel slidestoshow="2" style="3" tags="wood"]</code>
+						<br><br>
+						<p class="bg-info padding">
+							You can also use multiple tag names separated by commas. Example: tags="wood,carpet"
+						</p>
+						<hr>
+
+						<h2>Manage Total Properties</h2>
+						<p>Use attribute total_properties to control total number of properties.</p>
+						<code>[rem_carousel slidestoshow="2" style="3" total_properties="6"]</code>
+						<hr>
+
+						<h2>Prefer Near Properties (Enables Location Tracking)</h2>
+						<p>You can prefer those properties to display first which are near to the visitor's current location. Use attribute nearest_porperties and set its value to enable.</p>
+						<code>[rem_carousel slidestoshow="2" style="3" nearest_porperties="enable"]</code>
+						<br><br>
+						<p class="bg-info padding">
+							It enables geo location tracking and thus asks visitor to allow his location tracking. Your site must be ssl enabled for better results.
+						</p>
+						<hr>
+						<h2>Display "For Sell" Properties</h2>
+						<p>You can use meta attribute to filter properties based on any default field or custom field created by custom fields menu. Suppose you want to display only those properties which have Purpose set to Sell.</p>
+						<code>[rem_carousel slidestoshow="2" style="3" meta="property_purpose|Sell"]</code>
+						<br><br>
+						<p class="bg-info padding">
+							Please note that meta attribute accepts field name and value separated by pipe "|" sign. Value and field name both are case sensitive.
+						</p>
+						<hr>
+						<h2>Display Rented Properties</h2>
+						<p>As mentioned above, you can simply use meta attribute, setting its value to property_purpose|Rent.</p>
+						<code>[rem_carousel slidestoshow="2" style="3" meta="property_purpose|Rent"]</code>
+						<hr>
+						<h2>Type Specific Properties</h2>
+						<p>You can display a list of properties based on property type using property_type field name in meta attribute. Following shortcode will display all Houses</p>
+						<code>[rem_carousel slidestoshow="2" style="3" meta="property_type|House"]</code>
+						<br><br>
+						<p>Similarly, following shortcode will display all Offices.</p>
+						<code>[rem_carousel slidestoshow="2" style="3" meta="property_type|Office"]</code>
+						<br><br>
+						<p>and following will display all Retails.</p>
+						<code>[rem_carousel slidestoshow="2" style="3" meta="property_type|Retail"]</code>
+						<hr>
+						<h2>Filter by Multiple Meta</h2>
+						<p>You can also use multiple fields in meta attribute. Each field-value group separated by commas. In the following example, it will display all those properties having country set to Australia and city set to Sydney.</p>
+						<code>[rem_carousel slidestoshow="2" style="3" meta="property_city|sydney,property_country|australia"]</code>
+						<br><br>
+						<p class="bg-info padding">
+							Again, all field names and values in meta attribute are case sensitive.
+						</p>
+						<hr>
+					</div>
+					<div class="box-doc" id="properties-map">
+						<h1><i class="fa fa-map-marker"></i> Properties Map</h1>
+
+						<h2>Default Shortcode</h2>
+						<p>Following Shortcode displays 10 properties order by date in Ascending order on a Map.</p>
+						<code>[rem_maps]</code>
+						<hr>
+
+						<h2>Order and Orderby Attributes</h2>
+						<p>Following Shortcode displays 9 recent properties on map.</p>
+						<code>[rem_maps order="DESC" total_properties="9" orderby="date"]</code>
+						<br><br>
+						<p>
+							You can use following values for order attribute
+						<ul>
+							<li><b>DESC</b> - Descending order of orderby attribute</li>
+							<li><b>ASC</b> - Ascending order of orderby attribute</li>
+						</ul>
+						</p>
+						<p>
+							You can use following values for orderby attribute
+						<ul>
+							<li><b>date</b> - Sort by Property published date</li>
+							<li><b>ID</b> - Sort by Property ID</li>
+							<li><b>author</b> - Sort by Property Agent</li>
+							<li><b>title</b> - Sort by Property Title</li>
+							<li><b>modified</b> - Sort by Property Modify Date</li>
+							<li><b>rand</b> - Random order</li>
+						</ul>
+						</p>
+						<hr>
+
+						<h2>Tag Specific Properties</h2>
+						<p>You can use tags attribute to display properties that are tagged with specific tag. Following shortcode will dispaly all properties that are tagged with wood.</p>
+						<code>[rem_maps total_properties="-1" tags="wood"]</code>
+						<br><br>
+						<p class="bg-info padding">
+							You can also use multiple tag names separated by commas. Example: tags="wood,carpet"
+						</p>
+						<hr>
+
+						<h2>Prefer Near Properties (Enables Location Tracking)</h2>
+						<p>You can prefer those properties to display first which are near to the visitor's current location. Use attribute nearest_porperties and set its value to enable.</p>
+						<code>[rem_maps total_properties="10" nearest_porperties="enable"]</code>
+						<br><br>
+						<p class="bg-info padding">
+							It enables geo location tracking and thus asks visitor to allow his location tracking. Your site must be ssl enabled for better results.
+						</p>
+						<hr>
+						<h2>Display "For Sell" Properties</h2>
+						<p>You can use meta attribute to filter properties based on any default field or custom field created by custom fields menu. Suppose you want to display only those properties which have Purpose set to Sell.</p>
+						<code>[rem_maps meta="property_purpose|Sell"]</code>
+						<br><br>
+						<p class="bg-info padding">
+							Please note that meta attribute accepts field name and value separated by pipe "|" sign. Value and field name both are case sensitive.
+						</p>
+						<hr>
+						<h2>Display Rented Properties</h2>
+						<p>As mentioned above, you can simply use meta attribute, setting its value to property_purpose|Rent.</p>
+						<code>[rem_maps meta="property_purpose|Rent"]</code>
+						<hr>
+						<h2>Type Specific Properties</h2>
+						<p>You can display a list of properties based on property type using property_type field name in meta attribute. Following shortcode will display all Houses</p>
+						<code>[rem_maps meta="property_type|House"]</code>
+						<br><br>
+						<p>Similarly, following shortcode will display all Offices.</p>
+						<code>[rem_maps meta="property_type|Office"]</code>
+						<br><br>
+						<p>and following will display all Retails.</p>
+						<code>[rem_maps meta="property_type|Retail"]</code>
+						<hr>
+						<h2>Filter by Multiple Meta</h2>
+						<p>You can also use multiple fields in meta attribute. Each field-value group separated by commas. In the following example, it will display all those properties having country set to Australia and city set to Sydney.</p>
+						<code>[rem_maps meta="property_city|sydney,property_country|australia"]</code>
+						<br><br>
+						<p class="bg-info padding">
+							Again, all field names and values in meta attribute are case sensitive.
+						</p>
+						<hr>
+
+						<h2>Display ID Specific Properties</h2>
+						<p>If you want to display some specific properties using their IDs, you can use attribute ids and set its value to comma separated property ids.</p>
+						<code>[rem_maps ids="124,456,789"]</code>
+						<hr>
+
+						<h2>Loading Labels</h2>
+						<p>Customize the default loading messages by using load_heading and load_desc attributes.</p>
+						<code>[rem_maps load_heading="Just a Second!" load_desc="Loading Properties..."]</code>
+						<hr>
+
+						<h2>Map Height</h2>
+						<p>By default map's height is 600px, but you can change it. Use attribute map_height to change it, don't forget to provide unit also.</p>
+						<code>[rem_maps map_height="450px"]</code>
+						<hr>
+
+						<h2>My Location Marker</h2>
+						<p>My location marker appears on map when users click on location icon. You can customize it using my_location_icon attribute and providing url to the icon.</p>
+						<code>[rem_maps my_location_icon="http://rem.webcodingplace.com/wp-content/uploads/2018/01/single-home-pin.png"]</code>
+						<br><br>
+						<p class="bg-info padding">
+							Recommended size is 100x100 and format PNG.
+						</p>
+						<hr>
+
+						<h2>Circle Markers</h2>
+						<p>You can customize the green circle that appears for multiple properties using attribute circle_icon and providing url to the icon.</p>
+						<code>[rem_maps circle_icon="http://rem.webcodingplace.com/wp-content/uploads/2018/01/single-home-pin.png"]</code>
+						<br><br>
+						<p class="bg-info padding">
+							Recommended size is 55x55 and format PNG.
+						</p>
+						<hr>
+
+						<h2>Customize Markers based on Property Purpose</h2>
+						<p>You can use different markers for sell and rented properties on map, using attribute icons_data. It contains icon urls based on the value separated by commas. It follows following structure.</p>
+						<blockquote>
+							VALUE|STATIC_ICON_URL|HOVER_ICON_URL
+						</blockquote>
+						<p>
+							So, our shortcode will become
+						</p>
+						<code>[rem_maps icons_data="Sell|http://rem.webcodingplace.com/wp-content/uploads/2018/01/housessales.png|http://rem.webcodingplace.com/wp-content/uploads/2018/01/housessales_2x-1.png,Rent|http://rem.webcodingplace.com/wp-content/uploads/2018/01/housesrent.png|http://rem.webcodingplace.com/wp-content/uploads/2018/01/housesrentals_2x.png"]</code>
+						<br><br>
+						<p class="bg-info padding">
+							Recommended size is 72x60 and format PNG.
+						</p>
+						<hr>
+
+						<h2>Customize Markers based on Custom Meta</h2>
+						<p>Markers can also be differenciate by other meta like you may want to use diffferent icon for house, different for Villa and so on. Because these are property types, our key will be property_type and we have to use it in shortcode as a value of icons_by_meta attribute. Then we will follow above procedure to provide custom icons in icons_data attribute. Following is shortcode that we're using on the homepage of our demo, where markers are different based on Property Type.</p>
+
+						<code>[rem_maps icons_by_meta="property_type" icons_data="House|http://rem.webcodingplace.com/wp-content/uploads/2018/01/single-home-pin.png|http://rem.webcodingplace.com/wp-content/uploads/2018/01/single-home-hover-pin.png,Duplex|http://rem.webcodingplace.com/wp-content/uploads/2018/01/condominium-pin.png|http://rem.webcodingplace.com/wp-content/uploads/2018/01/condominium-hover-pin.png,Office|http://rem.webcodingplace.com/wp-content/uploads/2018/01/apartement-pin.png|http://rem.webcodingplace.com/wp-content/uploads/2018/01/apartement-hover-pin.png,Retail|http://rem.webcodingplace.com/wp-content/uploads/2018/01/family-house-pin.png|http://rem.webcodingplace.com/wp-content/uploads/2018/01/family-house-hover-pin.png"]</code>
+						<br><br>
+						<p class="bg-info padding">
+							Recommended size is 72x60 and format PNG.
+						</p>
+						<hr>
+
+						<h2>Custom Colors</h2>
+						<p>You can use following attributes in rem_maps shortcode to customize the colors. Details are given with each attribute.</p>
+						<table class="table table-bordered">
+							<tbody>
+								<tr>
+									<th>Attributes</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>btn_bg_color</td>
+									<td>Set buttons background color for all buttons on map.</td>
+								</tr>
+								<tr>
+									<td>btn_text_color</td>
+									<td>Set buttons text color for all buttons on map.</td>
+								</tr>
+								<tr>
+									<td>btn_bg_color_hover</td>
+									<td>Set buttons background color on hover for all buttons on map.</td>
+								</tr>
+								<tr>
+									<td>btn_text_color_hover</td>
+									<td>Set buttons text color on hover for all buttons on map.</td>
+								</tr>
+								<tr>
+									<td>loader_color</td>
+									<td>Set color of loading box.</td>
+								</tr>
+								<tr>
+									<td>water_color</td>
+									<td>Set map water color.</td>
+								</tr>
+								<tr>
+									<td>fill_color</td>
+									<td>Set map natural fill color.</td>
+								</tr>
+								<tr>
+									<td>poi_color</td>
+									<td>Set map point of interests color.</td>
+								</tr>
+								<tr>
+									<td>poi_color_hue</td>
+									<td>Set map point of interests hue color.</td>
+								</tr>
+							</tbody>
+						</table>
+						<p>Example Usage:</p>
+						<code>[rem_maps btn_bg_color="#16a393" btn_text_color="white" btn_bg_color_hover="#01a38a" btn_text_color_hover="#ffffff"]</code>
+						<br><br>
+						<p class="bg-info padding">
+							You can either use color name as value or color code with # sign.
+						</p>
+						<hr>
+					</div>
+					<div class="box-doc" id="register-agent-form">
+						<h1><i class="fa fa-user-plus"></i> Register Agent</h1>
+
+						<h2>Default Shortcode</h2>
+						<p>Following Shortcode displays a form to register new agent.</p>
+						<code>[rem_register_agent]</code>
+						<br><br>
+						<p class="bg-info padding">
+							Please note that this shortcode will display nothing when you're already logged in.
+						</p>
+						<hr>
+
+						<h2>Redirect After Registration</h2>
+						<p>You can use redirect attribute to redirect user after successfull registration.</p>
+						<code>[rem_register_agent redirect="http://site.com/success"]</code>
+						<hr>
+
+						<h2>Contents for already logged in users</h2>
+						<p>You can provide inner contents in shortcode that will be displayed when user is already logged in. Following shortcode will display registration form for non logged in users and edit profile page, for logged in users at the same time.</p>
+						<code>[rem_register_agent redirect="http://site.com/success"][rem_agent_edit][/rem_register_agent]</code>
+						<hr>
+					</div>
+					<div class="box-doc" id="login-agent">
+						<h1><i class="fa fa-sign-in"></i> Login Agent</h1>
+
+						<h2>Default Shortcode</h2>
+						<p>Following Shortcode displays a form to login users via AJAX.</p>
+						<code>[rem_agent_login]</code>
+						<br><br>
+						<p class="bg-info padding">
+							Please note that this shortcode will display nothing when you're already logged in.
+						</p>
+						<hr>
+
+						<h2>Form Heading</h2>
+						<p>Customize "Login Here" message using attribute heading.</p>
+						<code>[rem_agent_login heading="Please Provide Email and Password"]</code>
+						<br><br>
+						<hr>
+
+						<h2>Redirect After Logged In</h2>
+						<p>You can provide url to redirect after successfull login using attribute redirect.</p>
+						<code>[rem_agent_login redirect="http://site.com/success"]</code>
+						<br><br>
+						<hr>
+
+						<h2>Contents for already logged in users</h2>
+						<p>You can provide inner contents in shortcode that will be displayed when user is already logged in. Following shortcode will display login form for non logged in users and edit profile page, for logged in users at the same time.</p>
+						<code>[rem_agent_login redirect="http://site.com/success"][rem_agent_edit][/rem_agent_login]</code>
+						<hr>
+					</div>
+					<div class="box-doc" id="create-property">
+						<h1><i class="fa fa-file-text"></i> Create Property</h1>
+
+						<h2>Default Shortcode</h2>
+						<p>Following Shortcode displays a form to create new property.</p>
+						<code>[rem_create_property]</code>
+						<br><br>
+						<p class="bg-info padding">
+							Please note that this shortcode will display nothing when you're not logged in.
+						</p>
+						<hr>
+
+						<h2>Contents for non logged in users</h2>
+						<p>You can provide inner contents in shortcode that will be displayed when user is not logged in. Following shortcode will display login form for non logged in users and create property form, for logged in users at the same time.</p>
+						<code>[rem_create_property][rem_agent_login][/rem_create_property]</code>
+						<hr>
+					</div>
+					<div class="box-doc" id="edit-property">
+						<h1><i class="fa fa-pencil-square-o"></i> Edit Property</h1>
+
+						<h2>Default Shortcode</h2>
+						<p>Following Shortcode displays a form to edit property.</p>
+						<code>[rem_edit_property]</code>
+						<br><br>
+						<p class="bg-info padding">
+							Please note that this shortcode will display nothing when you're not logged in.
+						</p>
+						<hr>
+
+						<h2>Contents for non logged in users</h2>
+						<p>You can provide inner contents in shortcode that will be displayed when user is not logged in. Following shortcode will display login form for non logged in users and edit property form, for logged in users at the same time.</p>
+						<code>[rem_edit_property][rem_agent_login][/rem_edit_property]</code>
+						<hr>
+					</div>
+					<div class="box-doc" id="my-properties">
+						<h1><i class="fa fa-th-list"></i> My Properties</h1>
+
+						<h2>Default Shortcode</h2>
+						<p>Following Shortcode displays properties of current logged in agent with buttons to edit or delete them.</p>
+						<code>[rem_my_properties]</code>
+						<br><br>
+						<p class="bg-info padding">
+							Please note that this shortcode will display nothing when you're not logged in.
+						</p>
+						<hr>
+
+						<h2>Contents for non logged in users</h2>
+						<p>You can provide inner contents in shortcode that will be displayed when user is not logged in. Following shortcode will display login form for non logged in users and list of properties, for current logged in agent at the same time.</p>
+						<code>[rem_my_properties][rem_agent_login][/rem_my_properties]</code>
+						<hr>
+					</div>
+					<div class="box-doc" id="list-agents">
+						<h1><i class="fa fa-users"></i> List Agents</h1>
+
+						<h2>Default Shortcode</h2>
+						<p>Following Shortcode displays all approved agents one after another on the same page.</p>
+						<code>[rem_list_agents]</code>
+						<hr>
+
+						<h2>Display Agents in Grid</h2>
+						<p>You can display agents in 3 columns grid using attribute columns.</p>
+						<code>[rem_list_agents columns="col-sm-4"]</code>
+						<hr>
+
+						<h2>Display Specific Agents</h2>
+						<p>You can display specific agents by providing their IDs.</p>
+						<code>[rem_list_agents ids="18,56"]</code>
+						<hr>
+
+						<h2>Order and Orderby Attributes</h2>
+						<p>Following Shortcode displays agents in ascending order of their display name.</p>
+						<code>[rem_list_agents order="ASC" orderby="display_name"]</code>
+						<br><br>
+						<p>
+							You can use following values for order attribute
+						<ul>
+							<li><b>DESC</b> - Descending order of orderby attribute</li>
+							<li><b>ASC</b> - Ascending order of orderby attribute</li>
+						</ul>
+						</p>
+						<p>
+							You can use following values for orderby attribute
+						<ul>
+							<li><b>ID</b> - Sort by Agent ID</li>
+							<li><b>login</b> - Sort by Agent Username</li>
+							<li><b>nicename</b> - Sort by Agent Nice Name</li>
+							<li><b>email</b> - Sort by Agent Email Address</li>
+							<li><b>url</b> - Sort by Agent URL</li>
+						</ul>
+						</p>
+						<hr>						
+					</div>
+					<div class="box-doc" id="agent-profile-public">
+						<h1><i class="fa fa-user"></i> Agent Profile Page</h1>
+
+						<h2>Default Shortcode</h2>
+						<p>Following Shortcode displays profile of specific agent. Provide agent id in author_id attribute.</p>
+						<code>[rem_agent_profile author_id="1"]</code>
+						<hr>
+
+						<h2>My Profile</h2>
+
+						<p>You can display profile of current logged in user using shortcode.</p>
+						<code>[rem_my_profile]</code>
+						<hr>
+					</div>
+					<div class="box-doc" id="single-property">
+						<h1><i class="fa fa-file-text-o"></i> Single Property</h1>
+
+						<h2>Default Shortcode</h2>
+						<p>Following Shortcode displays single property according to id provided.</p>
+						<code>[rem_property id="1"]</code>
+						<hr>
+					</div>
+					<div class="box-doc" id="edit-profile">
+						<h1><i class="fa fa-pencil"></i> Edit Profile Frontend</h1>
+
+						<h2>Default Shortcode</h2>
+						<p>Following Shortcode displays a form to edit agent's profile.</p>
+						<code>[rem_agent_edit]</code>
+						<br><br>
+						<p class="bg-info padding">
+							Please note that this shortcode will display nothing when you're not logged in.
+						</p>
+						<hr>
+
+						<h2>Contents for non logged in users</h2>
+						<p>You can provide inner contents in shortcode that will be displayed when user is not logged in. Following shortcode will display login form for non logged in users and edit profile form, for logged in users at the same time.</p>
+						<code>[rem_agent_edit][rem_agent_login][/rem_agent_edit]</code>
+						<hr>
+					</div>
+				</div>
+			</div>
+		</section>
+		<script	src="script/jquery.min.js"></script>		<!-- jQuery	(necessary for Bootstrap's JavaScript plugins) -->
+		<script	src="script/jquery-ui.min.js"></script>	<!-- jQuery	UI is a	curated	set	of user	interface interactions,	effects, widgets, and themes -->
+		<script	src="script/bootstrap.min.js"></script>	<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script>
+			
+			/* RESPONSIVE LEFT MENU
+			============================================== */
+			$(document).ready(function(){
+				var lastId, $targetLink = $('.block-menu a[href^="#"]');
+				$($targetLink, document.body).on('click',function (e) {
+					$targetLink.removeClass('active');
+					$(this).addClass('active');
+					e.preventDefault();
+					var target = this.hash;
+					var $target = $(target);
+					var pointer = $target.offset().top;
+					$('html, body').stop().animate({
+						'scrollTop': pointer
+					}, 900, 'swing', function () {
+						//window.location.hash = target;
+					});
+				});
+			
+				var lastId, topMenu = $(".block-menu"),
+					topMenuHeight = 160,
+					menuItems = topMenu.find('a[href^="#"]');
+			
+					// Anchors corresponding to menu items
+					var scrollItems = menuItems.map(function(){
+			
+						var item = $($(this).attr("href"));
+						if (item.length) { 
+							return item;
+						}
+			
+					});
+			
+					// Bind to scroll
+					$(window).scroll(function(){
+			
+						if(topMenu.hasClass('affix')){
+			
+						   // Get container scroll position
+						   var fromTop = $(this).scrollTop()+topMenuHeight;
+						   
+						   // Get id of current scroll item
+						   var cur = scrollItems.map(function(){
+							 if ($(this).offset().top < fromTop)
+							   return this;
+						   });
+						   // Get the id of the current element
+						   cur = cur[cur.length-1];
+						   var id = cur && cur.length ? cur[0].id : "";
+						   
+						   if (lastId !== id) {
+							   lastId = id;
+							   // Set/remove active class
+							   menuItems.removeClass("active");
+							   menuItems.filter("[href=#"+id+"]").addClass("active");
+						   }  
+						} //end- if
+					}); //end- scroll
+			
+			});
+		</script>
+	</body>
+</html>
